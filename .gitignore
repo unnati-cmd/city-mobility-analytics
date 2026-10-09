@@ -1,0 +1,25 @@
+# Data files
+data/
+*.parquet
+*.csv
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Temporary and generated outputs
+logs/
+output/
+spark-warehouse/
+.metastore_db/
+
+# IDE and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
