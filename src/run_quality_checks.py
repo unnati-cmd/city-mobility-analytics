@@ -3,8 +3,7 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.parquet as pq
 
-from validate_source import DATA_FILE, validate_source
-
+from src.validate_source import DATA_FILE, validate_source
 
 def count_true(condition):
     """Count true values while safely handling null results."""
@@ -219,6 +218,18 @@ def run_quality_checks():
             f"({percentage:.2f}%)"
         )
 
+
+    return {
+        "total_rows": total_rows,
+        "null_counts": null_counts,
+        "metrics": metrics,
+        "payment_counts": payment_counts,
+        "minimum_distance": minimum_distance,
+        "maximum_distance": maximum_distance,
+        "minimum_fare": minimum_fare,
+        "maximum_fare": maximum_fare,
+        "maximum_passengers": maximum_passengers,
+    }
 
 if __name__ == "__main__":
     run_quality_checks()
